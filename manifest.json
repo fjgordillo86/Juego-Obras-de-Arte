@@ -1,0 +1,21 @@
+{
+    "name": "Obras de Arte - El Juego",
+    "short_name": "Juego de Arte",
+    "description": "Adivina el autor o el nombre de las obras de arte más famosas.",
+    "start_url": "./index.html",
+    "display": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "icons": [
+        {
+            "src": "img/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras de Arte - El Juego</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- VISTA 1: PANTALLA DE INICIO -->
+    <div id="start-screen">
+        <!-- ELIMINADO: El título H1 ya no está aquí -->
+        <img src="img/portada.jpg" alt="Collage de Obras de Arte" id="portada-img">
+
+        <div id="rankings-section">
+            <h2 id="ranking-title">Ranking - Artista</h2>
+            <div id="ranking-winners">
+                <!-- Este contenido será generado por JavaScript -->
+            </div>
+        </div>
+        
+        <div id="setup-container">
+            <!-- Línea 1: Modo de juego y botón de ranking -->
+            <div class="setup-row">
+                <div id="mode-selector">
+                    <p>Modo de Juego</p>
+                    <div class="options-grid">
+                        <button class="mode-option-btn" data-mode="artista">Adivina Artista</button>
+                        <button class="mode-option-btn" data-mode="obra">Adivina la Obra</button>
+                    </div>
+                </div>
+                <button id="show-ranking-btn" title="Ver ranking completo">🏆</button>
+            </div>
+            
+            <!-- Línea 2: Número de preguntas -->
+            <div class="setup-row">
+                <div id="question-selector">
+                    <p>Nº de Preguntas</p>
+                    <div class="options-grid">
+                        <button class="num-option-btn">10</button>
+                        <button class="num-option-btn">20</button>
+                        <button class="num-option-btn">30</button>
+                        <button class="num-option-btn">40</button>
+                        <button class="num-option-btn">50</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Línea 3: Nombre del jugador y botón de inicio -->
+            <div class="setup-row">
+                <input type="text" id="nombre-jugador" placeholder="Escribe tu nombre aquí" maxlength="20">
+                <button id="start-btn">Comenzar</button>
+            </div>
+        </div>
+        
+        <p id="countdown-message"></p>
+        
+    </div>
+
+    <!-- VISTA 2: CONTENEDOR DEL JUEGO -->
+    <div id="quiz-container">
+        <h1 id="quiz-title"></h1>
+        <img id="cuadro-img" src="" alt="Obra de arte">
+        <div id="opciones-container"></div>
+        <p id="feedback"></p>
+        <p id="puntuacion">Puntuación: 0</p>
+        <button id="siguiente-btn" class="opcion-btn">Siguiente Pregunta</button>
+        <button id="finalizar-btn" class="opcion-btn">Finalizar Juego</button>
+        <div id="end-game-controls">
+            <button id="reiniciar-btn" class="opcion-btn">Volver a Jugar</button>
+            <button id="cerrar-btn" class="opcion-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <audio id="sonido-acierto" src="audio/acierto.mp3"></audio>
+    <audio id="sonido-fallo" src="audio/fallo.mp3"></audio>
+    <audio id="sonido-start" src="audio/start.mp3"></audio>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

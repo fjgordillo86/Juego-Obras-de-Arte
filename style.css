@@ -1,0 +1,161 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#start-screen, #quiz-container {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+#quiz-container { display: none; }
+#start-screen h1 { margin-bottom: 15px; font-size: 2.5em; }
+#portada-img { max-width: 80%; height: auto; border-radius: 8px; margin-bottom: 25px; }
+
+#setup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.setup-row {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* MODIFICADO: Valores de flex actualizados */
+#mode-selector {
+    flex-basis: 350px;
+    flex-shrink: 0;
+}
+
+#show-ranking-btn {
+    flex-grow: 1;
+    padding: 10px 12px;
+    font-size: 1.4em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#show-ranking-btn:hover { background-color: #e0e0e0; }
+
+#question-selector { width: 100%; }
+
+#nombre-jugador {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#start-btn { 
+    flex-basis: 150px;
+    padding: 15px; 
+    background-color: #28a745; 
+    color: white; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+#start-btn:hover { background-color: #218838; }
+
+#question-selector, #mode-selector { 
+    padding: 8px 12px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#question-selector p, #mode-selector p { 
+    margin: 0 0 8px 0; 
+    font-size: 0.9em; 
+    color: #555; 
+}
+
+.options-grid { display: flex; justify-content: space-around; gap: 5px; }
+.num-option-btn, .mode-option-btn { flex: 1; padding: 8px 5px; border: 1px solid #ddd; background-color: #f0f0f0; border-radius: 4px; cursor: pointer; transition: background-color 0.2s, color 0.2s; font-size: 0.9em; }
+.num-option-btn:hover, .mode-option-btn:hover { background-color: #e0e0e0; }
+.num-option-btn.selected, .mode-option-btn.selected { background-color: #007bff; color: white; border-color: #007bff; }
+
+#countdown-message { display: none; font-size: 1.3em; font-weight: bold; color: #333; min-height: 28px; margin-top: 15px; }
+
+/* --- Estilos del Juego (sin cambios) --- */
+#cuadro-img { max-width: 100%; height: auto; max-height: 300px; border: 2px solid #ccc; border-radius: 5px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
+#opciones-container { display: flex; flex-direction: column; gap: 10px; }
+#opciones-container .opcion-btn { padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; cursor: pointer; transition: background-color 0.3s; }
+.correcto { background-color: #d4edda !important; }
+.incorrecto { background-color: #f8d7da !important; }
+#feedback { margin-top: 15px; font-weight: bold; min-height: 24px; }
+#siguiente-btn, #finalizar-btn { display: none; width: 60%; margin: 20px auto 0; padding: 15px; background-color: #007bff; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; }
+#end-game-controls { display: none; margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+#siguiente-btn:hover, #finalizar-btn:hover, #end-game-controls .opcion-btn:hover { background-color: #0056b3; }
+
+/* --- Estilos para el Podio del Ranking --- */
+#rankings-section {
+    margin-bottom: 25px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 15px 10px;
+}
+#ranking-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+#ranking-winners {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    min-height: 80px; 
+}
+.winner-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+}
+.winner-card:nth-child(1) { order: 2; transform: translateY(-10px); }
+.winner-card:nth-child(2) { order: 1; }
+.winner-card:nth-child(3) { order: 3; }
+.winner-medal {
+    font-size: 1.8em;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.winner-info {
+    font-size: 0.85em;
+    color: #555;
+    text-align: center;
+    word-break: break-word;
+}
+.no-ranking-data {
+    color: #888;
+    font-style: italic;
+    align-self: center;
+    transform: translateY(0);
+}
