@@ -126,6 +126,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center; /* <-- ESTA ES LA LÍNEA CLAVE AÑADIDA */
     }
     #quiz-container { display: none; }
     .setup-row { flex-direction: column; }
@@ -139,10 +140,7 @@ body {
     /* --- Estilos de la pantalla del juego en móvil --- */
     #quiz-title { font-size: 1.4em; }
     
-    /* AÑADIDO: Centrar la imagen del juego en la vista móvil */
-    #cuadro-img {
-        align-self: center; /* Centra la imagen horizontalmente dentro del contenedor flex */
-    }
+    /* ELIMINADO: La regla específica para #cuadro-img ya no es necesaria */
 
     #opciones-container .opcion-btn { padding: 18px; font-size: 1.1em; font-weight: bold; }
     #siguiente-btn, #finalizar-btn, #end-game-controls .opcion-btn { padding: 18px; width: 80%; font-size: 1.1em; }
