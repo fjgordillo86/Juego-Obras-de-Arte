@@ -19,7 +19,6 @@ body {
 }
 
 #quiz-container { display: none; }
-#start-screen h1 { margin-bottom: 15px; font-size: 2.5em; }
 #portada-img { max-width: 80%; height: auto; border-radius: 8px; margin-bottom: 25px; }
 
 #setup-container {
@@ -35,7 +34,6 @@ body {
     align-items: stretch;
 }
 
-/* MODIFICADO: Valores de flex actualizados */
 #mode-selector {
     flex-basis: 350px;
     flex-shrink: 0;
@@ -101,7 +99,7 @@ body {
 
 #countdown-message { display: none; font-size: 1.3em; font-weight: bold; color: #333; min-height: 28px; margin-top: 15px; }
 
-/* --- Estilos del Juego (sin cambios) --- */
+/* --- Estilos del Juego --- */
 #cuadro-img { max-width: 100%; height: auto; max-height: 300px; border: 2px solid #ccc; border-radius: 5px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
 #opciones-container { display: flex; flex-direction: column; gap: 10px; }
 #opciones-container .opcion-btn { padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; cursor: pointer; transition: background-color 0.3s; }
@@ -113,49 +111,87 @@ body {
 #siguiente-btn:hover, #finalizar-btn:hover, #end-game-controls .opcion-btn:hover { background-color: #0056b3; }
 
 /* --- Estilos para el Podio del Ranking --- */
-#rankings-section {
-    margin-bottom: 25px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 15px 10px;
-}
-#ranking-title {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    color: #333;
-    text-align: center;
-}
-#ranking-winners {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    min-height: 80px; 
-}
-.winner-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 5px;
-}
+#rankings-section { margin-bottom: 25px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 15px 10px; }
+#ranking-title { margin-top: 0; margin-bottom: 15px; font-size: 1.5em; color: #333; text-align: center; }
+#ranking-winners { display: flex; justify-content: space-around; align-items: flex-end; min-height: 80px; }
+.winner-card { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0 5px; }
 .winner-card:nth-child(1) { order: 2; transform: translateY(-10px); }
 .winner-card:nth-child(2) { order: 1; }
 .winner-card:nth-child(3) { order: 3; }
-.winner-medal {
-    font-size: 1.8em;
-    line-height: 1;
-    margin-bottom: 5px;
-}
-.winner-info {
-    font-size: 0.85em;
-    color: #555;
-    text-align: center;
-    word-break: break-word;
-}
-.no-ranking-data {
-    color: #888;
-    font-style: italic;
-    align-self: center;
-    transform: translateY(0);
+.winner-medal { font-size: 1.8em; line-height: 1; margin-bottom: 5px; }
+.winner-info { font-size: 0.85em; color: #555; text-align: center; word-break: break-word; }
+.no-ranking-data { color: #888; font-style: italic; align-self: center; transform: translateY(0); }
+
+
+/* ======================================================= */
+/* --- AÑADIDO: Estilos Responsivos para Móviles --- */
+/* ======================================================= */
+@media (max-width: 600px) {
+
+    #start-screen, #quiz-container {
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #quiz-container {
+        display: none; /* Mantenemos el quiz oculto */
+    }
+
+    /* Apilar controles para que no se compriman */
+    .setup-row {
+        flex-direction: column;
+    }
+
+    #mode-selector {
+        flex-basis: auto; /* Reseteamos la base para que ocupe el 100% */
+    }
+
+    /* Aumentar el tamaño de los botones para mejorar la usabilidad */
+    .num-option-btn, .mode-option-btn {
+        font-size: 1em;
+        padding: 12px 8px; /* Más área de toque */
+    }
+
+    #nombre-jugador {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+    
+    #start-btn, #show-ranking-btn {
+        font-size: 1.3em;
+        padding: 16px;
+    }
+
+    /* Mejorar legibilidad del ranking */
+    .winner-medal {
+        font-size: 2.2em;
+    }
+    .winner-info {
+        font-size: 0.95em;
+    }
+
+    /* --- Estilos de la pantalla del juego en móvil --- */
+
+    #quiz-title {
+        font-size: 1.4em;
+    }
+    
+    /* ¡MUY IMPORTANTE! Hacer los botones de respuesta grandes y fáciles de pulsar */
+    #opciones-container .opcion-btn {
+        padding: 18px;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    
+    #siguiente-btn, #finalizar-btn, #end-game-controls .opcion-btn {
+        padding: 18px;
+        width: 80%;
+        font-size: 1.1em;
+    }
 }
