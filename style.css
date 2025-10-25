@@ -28,20 +28,15 @@ body {
     margin-bottom: 20px;
 }
 
-/* MODIFICADO: Quitamos align-items para permitir anchos flexibles */
 .setup-row {
     display: flex;
     gap: 15px;
 }
 
-/* MODIFICADO: Distribución por porcentajes */
-#mode-selector {
-    width: 80%;
-}
-
+#mode-selector { width: 80%; }
 #show-ranking-btn {
     width: 20%;
-    padding: 10px 0; /* Ajustamos padding para que el icono no se comprima */
+    padding: 10px 0;
     font-size: 1.4em;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -51,11 +46,8 @@ body {
 }
 #show-ranking-btn:hover { background-color: #e0e0e0; }
 
-#question-selector { 
-    width: 100%; 
-}
+#question-selector { width: 100%; }
 
-/* MODIFICADO: Distribución por porcentajes */
 #nombre-jugador {
     width: 70%;
     padding: 12px;
@@ -64,7 +56,7 @@ body {
     font-size: 1.4em;
     font-weight: bold;
     text-align: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    box-sizing: border-box;
 }
 
 #start-btn { 
@@ -78,7 +70,7 @@ body {
     border-radius: 5px; 
     cursor: pointer; 
     transition: background-color 0.3s;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    box-sizing: border-box;
 }
 #start-btn:hover { background-color: #218838; }
 
@@ -89,20 +81,14 @@ body {
     justify-content: center; 
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    box-sizing: border-box;
 }
 
-#question-selector p, #mode-selector p { 
-    margin: 0 0 8px 0; 
-    font-size: 0.9em; 
-    color: #555; 
-}
-
+#question-selector p, #mode-selector p { margin: 0 0 8px 0; font-size: 0.9em; color: #555; }
 .options-grid { display: flex; justify-content: space-around; gap: 5px; }
 .num-option-btn, .mode-option-btn { flex: 1; padding: 8px 5px; border: 1px solid #ddd; background-color: #f0f0f0; border-radius: 4px; cursor: pointer; transition: background-color 0.2s, color 0.2s; font-size: 0.9em; }
 .num-option-btn:hover, .mode-option-btn:hover { background-color: #e0e0e0; }
 .num-option-btn.selected, .mode-option-btn.selected { background-color: #007bff; color: white; border-color: #007bff; }
-
 #countdown-message { display: none; font-size: 1.3em; font-weight: bold; color: #333; min-height: 28px; margin-top: 15px; }
 
 /* --- Estilos del Juego --- */
@@ -143,18 +129,21 @@ body {
     }
     #quiz-container { display: none; }
     .setup-row { flex-direction: column; }
-    
-    /* En móvil, hacemos que todos los elementos ocupen el 100% del ancho */
-    #mode-selector, #show-ranking-btn, #nombre-jugador, #start-btn {
-        width: 100%;
-    }
-
+    #mode-selector, #show-ranking-btn, #nombre-jugador, #start-btn { width: 100%; }
     .num-option-btn, .mode-option-btn { font-size: 1em; padding: 12px 8px; }
     #nombre-jugador { font-size: 1.5em; padding: 15px; }
     #start-btn, #show-ranking-btn { font-size: 1.3em; padding: 16px; }
     .winner-medal { font-size: 2.2em; }
     .winner-info { font-size: 0.95em; }
+    
+    /* --- Estilos de la pantalla del juego en móvil --- */
     #quiz-title { font-size: 1.4em; }
+    
+    /* AÑADIDO: Centrar la imagen del juego en la vista móvil */
+    #cuadro-img {
+        align-self: center; /* Centra la imagen horizontalmente dentro del contenedor flex */
+    }
+
     #opciones-container .opcion-btn { padding: 18px; font-size: 1.1em; font-weight: bold; }
     #siguiente-btn, #finalizar-btn, #end-game-controls .opcion-btn { padding: 18px; width: 80%; font-size: 1.1em; }
 }
